@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		h1{
+			color: red;
+		}
+		body{
+			margin:150px;
+		}
+		textarea{
+			width: 250px;
+			height: 70px;
+			background-color: blue;
+		}
+		button{
+			visibility: hidden;
+			color: red;
+			margin: 20px;
+			padding: 7px;
+			background-color: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>QUESTION3*</h1>
+	<h4>Talk about yourself in 30 Letters</h4>
+	<h3 id="num"></h3>
+	<textarea id ="Talk" onkeypress=" textareaLengthCheck()" onclick="color()"></textarea>
+	<button id="send" >send</button>
+
+
+<script type="text/javascript">
+	function color(){
+		document.getElementById("Talk").style.backgroundColor="white"
+	}
+	function textareaLengthCheck() {
+
+
+		var letters= " ";
+		var letters= document.getElementById("Talk").value;
+
+		var numOfLetters = letters.length +1;
+		if (numOfLetters <= 30){
+		document.getElementById("num").innerHTML =" The number of letters =" + numOfLetters;
+		}
+		else{
+			document.getElementById("Talk").disabled = true;
+			
+				document.getElementById("send").style.visibility ="visible";
+					
+		}
+
+		return letters,numOfLetters;
+    
+}
+
+</script>
+</body>
+</html>
